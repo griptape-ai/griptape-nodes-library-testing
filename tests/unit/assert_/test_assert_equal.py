@@ -1,9 +1,9 @@
 """Tests for AssertEqual node."""
 
 import pytest
-from griptape_nodes_library_testing.assert_.assert_equal import AssertEqual
-
 from griptape_nodes.retained_mode.griptape_nodes import GriptapeNodes
+
+from griptape_nodes_library_testing.assert_.assert_equal import AssertEqual
 
 
 class TestAssertEqual:

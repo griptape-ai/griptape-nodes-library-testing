@@ -41,4 +41,12 @@ skip-magic-trailing-comma = false
 line-ending = "auto"
 
 [dependency-groups]
-dev = ["ruff>=0.8.0", "pytest"]
+dev = ["pyright>=1.1.396", "pytest-asyncio>=0.21.0", "ruff>=0.8.0", "pytest"]
+
+[tool.pyright]
+venvPath = "."
+venv = ".venv"
+include = ["."]
+exclude = [".venv", "**/node_modules", "**/__pycache__", "**/.*", "templates"]
+pythonVersion = "3.12"
+reportIncompatibleMethodOverride = false

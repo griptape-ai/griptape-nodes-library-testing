@@ -1,9 +1,9 @@
 """Tests for AssertTrue node."""
 
 import pytest
-from griptape_nodes_library_testing.assert_.assert_true import AssertTrue
-
 from griptape_nodes.retained_mode.griptape_nodes import GriptapeNodes
+
+from griptape_nodes_library_testing.assert_.assert_true import AssertTrue
 
 
 class TestAssertTrue:

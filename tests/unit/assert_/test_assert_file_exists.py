@@ -4,11 +4,11 @@ from pathlib import Path
 from unittest.mock import patch
 
 import pytest
-from griptape_nodes_library_testing.assert_.assert_file_exists import AssertFileExists
-
 from griptape_nodes.files.file import File, FileLoadError
 from griptape_nodes.retained_mode.events.os_events import FileIOFailureReason
 from griptape_nodes.retained_mode.griptape_nodes import GriptapeNodes
+
+from griptape_nodes_library_testing.assert_.assert_file_exists import AssertFileExists
 
 
 class TestAssertFileExists:

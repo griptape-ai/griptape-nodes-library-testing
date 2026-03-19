@@ -1,9 +1,9 @@
 """Tests for AssertStrings node."""
 
 import pytest
-from griptape_nodes_library_testing.assert_.assert_strings import AssertStrings
-
 from griptape_nodes.retained_mode.griptape_nodes import GriptapeNodes
+
+from griptape_nodes_library_testing.assert_.assert_strings import AssertStrings
 
 
 class TestAssertStrings:

@@ -42,6 +42,32 @@ class TestAssertFileExists:
                 node.process()
         assert node.parameter_output_values["was_successful"] is False
 
+    def test_artifact_value_extraction(self, node: AssertFileExists) -> None:
+        """Test that artifact objects with a .value attribute are unwrapped."""
+
+        class FakeArtifact:
+            value = "/artifact/path/image.png"
+
+        node.parameter_values["file_path"] = FakeArtifact()
+        with patch.object(File, "resolve", return_value="/artifact/path/image.png") as mock_resolve:
+            with patch.object(Path, "exists", return_value=True):
+                node.process()
+        mock_resolve.assert_called_once()
+        assert node.parameter_output_values["was_successful"] is True
+
+    def test_artifact_value_missing_file_fails(self, node: AssertFileExists) -> None:
+        """Test that artifact objects fail correctly when the resolved file doesn't exist."""
+
+        class FakeArtifact:
+            value = "/artifact/path/missing.png"
+
+        node.parameter_values["file_path"] = FakeArtifact()
+        with patch.object(File, "resolve", return_value="/artifact/path/missing.png"):
+            with patch.object(Path, "exists", return_value=False):
+                with pytest.raises(AssertionError):
+                    node.process()
+        assert node.parameter_output_values["was_successful"] is False
+
     def test_custom_message_on_failure(self, node: AssertFileExists) -> None:
         node.parameter_values["file_path"] = "/missing/file.txt"
         node.parameter_values["message"] = "output file must exist"

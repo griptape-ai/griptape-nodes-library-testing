@@ -24,6 +24,14 @@
         "description": "Assertion nodes for testing and validating workflows",
         "icon": "ShieldCheck"
       }
+    },
+    {
+      "execution": {
+        "color": "border-blue-500",
+        "title": "Execution",
+        "description": "Execution control nodes for testing error handling and flow routing",
+        "icon": "Shield"
+      }
     }
   ],
   "nodes": [
@@ -80,6 +88,17 @@
         "display_name": "Assert File Exists",
         "icon": "ShieldCheck",
         "group": "assert"
+      }
+    },
+    {
+      "class_name": "TryCatchGroup",
+      "file_path": "griptape_nodes_library_testing/execution/try_catch_group.py",
+      "metadata": {
+        "category": "execution",
+        "description": "Catches exceptions from child nodes and routes to Succeeded/Failed control outputs.",
+        "display_name": "Try Catch Group",
+        "icon": "Shield",
+        "group": "execution"
       }
     }
   ],

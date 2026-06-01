@@ -38,6 +38,12 @@ class AssertFileExists(SuccessFailureNode):
         file_path = self.get_parameter_value("file_path")
         message = self.get_parameter_value("message")
 
+        # Artifact types (e.g. ImageUrlArtifact) carry their path in .value.
+        # Note that this AssertFileExists node is only valid for *UrlArtifact values
+        # that are actually file paths - URLs (including `file://`) will fail.
+        if hasattr(file_path, "value"):
+            file_path = file_path.value
+
         try:
             resolved_path = File(file_path).resolve()
         except FileLoadError as e:

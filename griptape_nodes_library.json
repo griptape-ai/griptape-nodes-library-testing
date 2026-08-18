@@ -100,6 +100,17 @@
         "icon": "Shield",
         "group": "execution"
       }
+    },
+    {
+      "class_name": "Sleep",
+      "file_path": "griptape_nodes_library_testing/execution/sleep.py",
+      "metadata": {
+        "category": "execution",
+        "description": "Holds execution for a configurable number of seconds; for timing-sensitive tests.",
+        "display_name": "Sleep",
+        "icon": "Timer",
+        "group": "execution"
+      }
     }
   ],
   "workflows": [],

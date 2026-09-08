@@ -1,118 +1,118 @@
 {
-  "name": "Griptape Nodes Testing Library",
-  "library_schema_version": "0.6.0",
-  "settings": [],
-  "metadata": {
-    "author": "Griptape",
-    "description": "Testing and assertion nodes for validating Griptape Node workflows",
-    "library_version": "0.1.0",
-    "engine_version": "0.77.2",
-    "tags": [
-      "Griptape",
-      "Testing"
+    "name": "Griptape Nodes Testing Library",
+    "library_schema_version": "0.6.0",
+    "settings": [],
+    "metadata": {
+        "author": "Griptape",
+        "description": "Testing and assertion nodes for validating Griptape Node workflows",
+        "library_version": "0.1.0",
+        "engine_version": "0.77.2",
+        "tags": [
+            "Griptape",
+            "Testing"
+        ],
+        "dependencies": {
+            "pip_dependencies": []
+        }
+    },
+    "widgets": [],
+    "categories": [
+        {
+            "assert": {
+                "color": "border-red-500",
+                "title": "Assert",
+                "description": "Assertion nodes for testing and validating workflows",
+                "icon": "ShieldCheck"
+            }
+        },
+        {
+            "execution": {
+                "color": "border-blue-500",
+                "title": "Execution",
+                "description": "Execution control nodes for testing error handling and flow routing",
+                "icon": "Shield"
+            }
+        }
     ],
-    "dependencies": {
-      "pip_dependencies": []
-    }
-  },
-  "widgets": [],
-  "categories": [
-    {
-      "assert": {
-        "color": "border-red-500",
-        "title": "Assert",
-        "description": "Assertion nodes for testing and validating workflows",
-        "icon": "ShieldCheck"
-      }
-    },
-    {
-      "execution": {
-        "color": "border-blue-500",
-        "title": "Execution",
-        "description": "Execution control nodes for testing error handling and flow routing",
-        "icon": "Shield"
-      }
-    }
-  ],
-  "nodes": [
-    {
-      "class_name": "AssertEqual",
-      "file_path": "griptape_nodes_library_testing/assert_/assert_equal.py",
-      "metadata": {
-        "category": "assert",
-        "description": "Asserts that two values are equal.",
-        "display_name": "Assert Equal",
-        "icon": "ShieldCheck",
-        "group": "assert"
-      }
-    },
-    {
-      "class_name": "AssertTrue",
-      "file_path": "griptape_nodes_library_testing/assert_/assert_true.py",
-      "metadata": {
-        "category": "assert",
-        "description": "Asserts that a value is truthy.",
-        "display_name": "Assert True",
-        "icon": "ShieldCheck",
-        "group": "assert"
-      }
-    },
-    {
-      "class_name": "AssertStrings",
-      "file_path": "griptape_nodes_library_testing/assert_/assert_strings.py",
-      "metadata": {
-        "category": "assert",
-        "description": "Asserts a string comparison using a selected operator.",
-        "display_name": "Assert Strings",
-        "icon": "ShieldCheck",
-        "group": "assert"
-      }
-    },
-    {
-      "class_name": "AssertNumbers",
-      "file_path": "griptape_nodes_library_testing/assert_/assert_numbers.py",
-      "metadata": {
-        "category": "assert",
-        "description": "Asserts a numeric comparison using a selected operator.",
-        "display_name": "Assert Numbers",
-        "icon": "ShieldCheck",
-        "group": "assert"
-      }
-    },
-    {
-      "class_name": "AssertFileExists",
-      "file_path": "griptape_nodes_library_testing/assert_/assert_file_exists.py",
-      "metadata": {
-        "category": "assert",
-        "description": "Asserts that a file exists at the given path.",
-        "display_name": "Assert File Exists",
-        "icon": "ShieldCheck",
-        "group": "assert"
-      }
-    },
-    {
-      "class_name": "TryCatchGroup",
-      "file_path": "griptape_nodes_library_testing/execution/try_catch_group.py",
-      "metadata": {
-        "category": "execution",
-        "description": "Catches exceptions from child nodes and routes to Succeeded/Failed control outputs.",
-        "display_name": "Try Catch Group",
-        "icon": "Shield",
-        "group": "execution"
-      }
-    },
-    {
-      "class_name": "Sleep",
-      "file_path": "griptape_nodes_library_testing/execution/sleep.py",
-      "metadata": {
-        "category": "execution",
-        "description": "Holds execution for a configurable number of seconds; for timing-sensitive tests.",
-        "display_name": "Sleep",
-        "icon": "Timer",
-        "group": "execution"
-      }
-    }
-  ],
-  "workflows": [],
-  "is_default_library": false
+    "nodes": [
+        {
+            "class_name": "AssertEqual",
+            "file_path": "griptape_nodes_library_testing/assert_/assert_equal.py",
+            "metadata": {
+                "category": "assert",
+                "description": "Asserts that two values are equal.",
+                "display_name": "Assert Equal",
+                "icon": "ShieldCheck",
+                "group": "assert"
+            }
+        },
+        {
+            "class_name": "AssertTrue",
+            "file_path": "griptape_nodes_library_testing/assert_/assert_true.py",
+            "metadata": {
+                "category": "assert",
+                "description": "Asserts that a value is truthy.",
+                "display_name": "Assert True",
+                "icon": "ShieldCheck",
+                "group": "assert"
+            }
+        },
+        {
+            "class_name": "AssertStrings",
+            "file_path": "griptape_nodes_library_testing/assert_/assert_strings.py",
+            "metadata": {
+                "category": "assert",
+                "description": "Asserts a string comparison using a selected operator.",
+                "display_name": "Assert Strings",
+                "icon": "ShieldCheck",
+                "group": "assert"
+            }
+        },
+        {
+            "class_name": "AssertNumbers",
+            "file_path": "griptape_nodes_library_testing/assert_/assert_numbers.py",
+            "metadata": {
+                "category": "assert",
+                "description": "Asserts a numeric comparison using a selected operator.",
+                "display_name": "Assert Numbers",
+                "icon": "ShieldCheck",
+                "group": "assert"
+            }
+        },
+        {
+            "class_name": "AssertFileExists",
+            "file_path": "griptape_nodes_library_testing/assert_/assert_file_exists.py",
+            "metadata": {
+                "category": "assert",
+                "description": "Asserts that a file exists at the given path.",
+                "display_name": "Assert File Exists",
+                "icon": "ShieldCheck",
+                "group": "assert"
+            }
+        },
+        {
+            "class_name": "TryCatchGroup",
+            "file_path": "griptape_nodes_library_testing/execution/try_catch_group.py",
+            "metadata": {
+                "category": "execution",
+                "description": "Catches exceptions from child nodes and routes to Succeeded/Failed control outputs.",
+                "display_name": "Try Catch Group",
+                "icon": "Shield",
+                "group": "execution"
+            }
+        },
+        {
+            "class_name": "Sleep",
+            "file_path": "griptape_nodes_library_testing/execution/sleep.py",
+            "metadata": {
+                "category": "execution",
+                "description": "Holds execution for a configurable number of seconds; for timing-sensitive tests.",
+                "display_name": "Sleep",
+                "icon": "Timer",
+                "group": "execution"
+            }
+        }
+    ],
+    "workflows": [],
+    "is_default_library": false
 }

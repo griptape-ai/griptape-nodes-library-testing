@@ -7,6 +7,7 @@ from pathlib import Path
 from unittest.mock import patch
 
 import pytest
+from griptape_nodes.retained_mode.engine import Engine
 from griptape_nodes.retained_mode.griptape_nodes import GriptapeNodes
 
 
@@ -42,6 +43,10 @@ def isolate_user_config() -> Generator[Path, None, None]:
 
 
 @pytest.fixture
-def griptape_nodes() -> GriptapeNodes:
-    """Provide a properly initialized GriptapeNodes instance for testing."""
+def griptape_nodes() -> Engine:
+    """Provide a properly initialized engine for testing.
+
+    `GriptapeNodes` is a facade over the current engine, so constructing it hands
+    back the `Engine` itself.
+    """
     return GriptapeNodes()

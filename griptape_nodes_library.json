@@ -6,7 +6,7 @@
         "author": "Griptape",
         "description": "Testing and assertion nodes for validating Griptape Node workflows",
         "library_version": "0.1.0",
-        "engine_version": "0.77.2",
+        "engine_version": "0.102.0",
         "tags": [
             "Griptape",
             "Testing"

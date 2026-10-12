@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import copy
 from unittest.mock import AsyncMock, patch
 
 import pytest
@@ -77,3 +78,13 @@ class TestTryCatchGroup:
         assert "exec_out" in right_params
         assert "failure" in right_params
         assert "error_message" in right_params
+
+    def test_right_parameters_stable_across_restores(self, node: TryCatchGroup) -> None:
+        expected = {"group_exec_out", "exec_out", "failure", "error_message"}
+
+        second_generation = TryCatchGroup(name="test_try_catch", metadata=copy.deepcopy(node.metadata))
+        third_generation = TryCatchGroup(name="test_try_catch", metadata=copy.deepcopy(second_generation.metadata))
+
+        assert set(third_generation.metadata["right_parameters"]) == expected
+        assert len(third_generation.metadata["right_parameters"]) == len(expected)
+        assert third_generation.metadata["right_parameters"] == node.metadata["right_parameters"]

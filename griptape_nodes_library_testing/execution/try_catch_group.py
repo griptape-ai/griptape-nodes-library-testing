@@ -12,7 +12,7 @@ from griptape_nodes.exe_types.core_types import (
     ParameterMode,
     ParameterTypeBuiltin,
 )
-from griptape_nodes.exe_types.node_groups.subflow_node_group import SubflowNodeGroup
+from griptape_nodes.exe_types.node_groups.subflow_node_group import RIGHT_PARAMETERS_KEY, SubflowNodeGroup
 
 logger = logging.getLogger("griptape_nodes")
 
@@ -70,9 +70,9 @@ class TryCatchGroup(SubflowNodeGroup):
         )
         self.add_parameter(self.error_message)
 
-        if "right_parameters" not in self.metadata:
-            self.metadata["right_parameters"] = []
-        self.metadata["right_parameters"].extend(["exec_out", "failure", "error_message"])
+        self._register_side_parameter(RIGHT_PARAMETERS_KEY, self.control_parameter_out.name)
+        self._register_side_parameter(RIGHT_PARAMETERS_KEY, self.failure_output.name)
+        self._register_side_parameter(RIGHT_PARAMETERS_KEY, self.error_message.name)
 
     def get_next_control_output(self) -> Parameter | None:
         if self._execution_succeeded is None:

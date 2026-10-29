@@ -10,4 +10,4 @@ the `library_version` in `griptape_nodes_library.json`.
 
 <!-- Entries go in changelog.d/, one file each. See changelog.d/README.md. -->
 
-[Unreleased]: https://github.com/griptape-ai/griptape-nodes-library-testing/compare/v0.1.0...HEAD
+[Unreleased]: https://github.com/griptape-ai/griptape-nodes-library-testing/compare/32e0b79e74b4d4b162a416abb371d6b486abc840...HEAD
